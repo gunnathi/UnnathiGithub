@@ -1,0 +1,261 @@
+
+Object Oriented Programming:
+
+Components of OOPS:
+
+1. Class
+
+	A collection of data members and member functions.
+
+2. Object
+
+	A representator of a class.
+	An instance of a class.
+	To access the instance of member of class, we need object.
+	When we create an object of a class, memory gets allocated to the data members and member function gets memory when they are invoked. 
+	
+
+Static Variables:
+
+	- shared the memory across all the objects.
+	- They get memory just before creating the first object of a class.
+	- They belongs to Class, They don't belong to Object.
+	
+
+Class (Java Phase One) -> (Object)Bhawna -> 
+
+---------------------------------------------------------
+
+
+	int temperature = 22;
+	if(temperature > 30) {
+		System.out.println("It's a hot day..");
+		System.out.println("Drink Water..");
+	} else {
+		System.out.println("Its a beautiful day..");
+	}
+		
+	---------------------
+	
+	int temperature = 12;
+	if(temperature > 30) {
+		System.out.println("It's a hot day..");
+		System.out.println("Drink Water..");
+	} else if (temperature > 20) {
+		System.out.println("Its a beautiful day..");
+	} else {
+		System.out.println("Its a cool day..");
+	}
+		
+	---------------------
+	
+	int temperature = 12;
+	if (temperature > 30) {
+		System.out.println("It's a hot day..");
+		System.out.println("Drink Water..");
+	} 
+	else if (temperature > 20)
+		System.out.println("Its a beautiful day..");
+	else
+		System.out.println("Its a cool day..");
+		
+	---------------------
+	
+	int income = 120_000;
+	String className = (income > 100000) ? "First Class" : "Second Class";
+	System.out.println(className);
+	
+	---------------------
+	
+	String role = "admin";
+	if(role == "admin") 
+		System.out.println("You are an admin.");
+	else if(role == "Moderator")
+		System.out.println("You are a moderator.");
+	else
+		System.out.println("You are a guest.");
+		
+	---------------------
+	
+	String role = "admin";
+
+	switch (role) {
+	case "admin":
+		System.out.println("You are an admin.");
+		break;
+
+	case "moderator":
+		System.out.println("You are an moderator.");
+		break;
+
+	default:
+		System.out.println("You are a guest.");
+		break;
+	}
+	
+	---------------------
+	
+	// FizzBuzz Exercise:
+	// If Number is divisible by 5 i.e. Fizz
+	// If Number is divisible by 3 i.e. Buzz
+	// If Number is divisible by 3 and 5 i.e. FizzBuzz
+	// If Number is divisible by 3 and 5 i.e. print number
+	Scanner scan = new Scanner(System.in);
+	System.out.print("Enter Number : ");
+	int number = scan.nextInt();
+	if (number % 5 == 0 && number % 3 == 0)
+		System.out.println("FizzBuzz");
+	else if (number % 3 == 0)
+		System.out.println("Buzz");
+	else if (number % 5 == 0)
+		System.out.println("Fizz");
+	else
+		System.out.println(number);
+		
+	-----------------------
+	
+	// Loops helps in iteration
+	// Looping Constructs: For Loop, While Loop and Do..While Loop
+	
+	for (int i = 0; i < 10; i++) {
+		System.out.println("Hello World " + i);
+	}
+	
+	for (int i = 9; i >= 0; i--) {
+		System.out.println("Bye " + i);
+	}
+	
+	------------------------
+	
+	int i = 0;
+	while (i < 5) {
+		System.out.println("Hello World " + i);
+		i++;
+	}
+	
+	Scanner scan = new Scanner(System.in);
+	String input = "";
+	while(!input.equals("quit")) {
+		System.out.print("Enter Input : ");
+		input = scan.next().toLowerCase();
+		System.out.println(input);
+	}
+	
+	-------------------------
+	
+	Scanner scan = new Scanner(System.in);
+	String input = "";
+	while(!input.equals("quit")) {
+		System.out.print("Enter Input : ");
+		input = scan.next().toLowerCase();
+		if(input.equals("pass")) 
+			continue;
+		if (input.equals("quit"))
+			break;
+		System.out.println(input);
+	}
+	
+	--------------------------
+	
+	int value = -1;
+	do {
+		System.out.println(value);
+		value--;
+	} while( value >= 0);
+	
+	--------------------------
+	
+	String[] fruits = {"Apple", "Mango", "Orange"};
+		
+	for (int i = fruits.length-1; i >= 0 ; i--) {
+		System.out.println(fruits[i]);
+	}
+	
+	System.out.println("------------------------------");
+	
+	for (String fruit : fruits) {
+		System.out.println(fruit);
+	}
+	
+	---------------------------
+	
+	Scanner scan = new Scanner(System.in);
+		System.out.println("Enter Employee Name : ");
+		String employeeName = scan.nextLine();
+		System.out.println("Enter Employee Salary : ");
+		float employeeSalary = scan.nextFloat();
+		System.out.println("Enter Employee City : ");
+		String employeeCity = scan.nextLine();
+		System.out.println("Employee Name : " + employeeName);
+		System.out.println("Employee Name : " + employeeSalary);
+		System.out.println("Employee Name : " + employeeCity);
+		
+		
+
+---------------------------------------------------------
+
+
+public class Employee {
+	
+	// Data Members (Instance Members/Non Static Members)
+	int id;
+	String name;
+	Float salary;
+	String city;
+	// Static Data Member
+	static String company;	
+}
+
+------
+
+import java.util.Scanner;
+
+public class ReadingWritingJavaObjectsExample {
+	
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+		
+		Employee emp1 = new Employee();	
+		Employee emp2 = new Employee();
+		
+		Employee.company = "Simplilearn";
+		
+		System.out.println("Details of Employee One: ");
+		System.out.println("Enter Employee Id : ");
+		emp1.id = scan.nextInt();
+		scan.nextLine();
+		System.out.println("Enter Employee Name : ");
+		emp1.name = scan.nextLine();
+		System.out.println("Enter Employee City : ");
+		emp1.city = scan.nextLine();
+		System.out.println("Enter Employee Salary : ");
+		emp1.salary = scan.nextFloat();
+		
+		System.out.println("Details of Employee One: ");
+		System.out.println("Enter Employee Id : ");
+		emp2.id = scan.nextInt();
+		scan.nextLine();
+		System.out.println("Enter Employee Name : ");
+		emp2.name = scan.nextLine();
+		System.out.println("Enter Employee City : ");
+		emp2.city = scan.nextLine();
+		System.out.println("Enter Employee Salary : ");
+		emp2.salary = scan.nextFloat();
+		
+		System.out.println("Employee One :");
+		System.out.println("Employee Id : " + emp1.id);
+		System.out.println("Employee Name : " + emp1.name);
+		System.out.println("Employee Salary : " + emp1.salary);
+		System.out.println("Employee City : " + emp1.city);
+		System.out.println("Employee City : " + Employee.company);
+		
+		System.out.println("Employee Two : ");
+		System.out.println("Employee Id : " + emp2.id);
+		System.out.println("Employee Name : " + emp2.name);
+		System.out.println("Employee Salary : " + emp2.salary);
+		System.out.println("Employee City : " + Employee.company);		
+	}
+
+}
+	

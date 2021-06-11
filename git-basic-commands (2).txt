@@ -1,0 +1,110 @@
+
+GIT - Version Control System
+
+- To check/track changes in files, folders and projects.
+- To collaborate in teams.
+
+-----------------------------------
+
+Version Control Systems can be Distributed and Centralized.
+
+GIT is a Distributed Version Control System.
+
+
+-----------------------------------
+
+GIT and GITHUB
+
+	GIT != GITHUB (Not Same)
+	
+GIT - Version Control System to track changes and collaborating in teams.
+GITHUB - A website or server to upload your project/repositories online.
+
+-----------------------------------
+
+GITHUB is a website to upload your repositories online.
+GITHUB:
+	- provides backup
+	- provides Visual Interface to your repositories
+	- Makes Collaboration Easier.
+	
+-----------------------------------
+
+1. To create a local repository:
+
+	F:\Sample_Projects\test-project>
+	
+2. To Initialize this folder as GIT repository:
+
+	> git init
+	
+3. Configure your github account in local git repository:
+
+	> git  config --global user.email dainikstories2020@gmail.com
+	
+	> git  config --global user.name dainikstories
+	
+4. Create two files in local repository
+
+	testone.txt and testtwo.txt
+	
+5. To check the status of repository:
+
+	git status
+
+6. To add untracked files to local repository
+
+	git add .
+	
+6. To commit untracked files to local repository
+	
+	git commit -m "First Commit"
+	
+7. To push local repository to server repository:
+
+	git remote add origin https://github.com/dainikstories/test-project.git
+
+	git push -u origin master
+	
+--------------------------------------------------
+
+
+https://github.com/dainikstories/test-project.git
+
+----------------------------------------------------
+
+1. Create files in local repository:
+
+	demone.txt and demotwo.txt
+	
+2. Check the status:
+
+	git status
+	
+3. Add untracked files for staging:
+
+	git add .
+	
+4. Check the status again:
+
+	git status
+	
+5.  To Commit the changes to local repository
+	
+	git commit -m "Adding Demo files"
+	
+6. To add committed changes to server repository:
+
+	git remote add origin https://github.com/dainikstories/test-project.git
+	
+	git push -u origin master
+	
+-----------------------------------------------
+
+	> git  config --global user.email dainikstories2020@gmail.com
+	
+	> git  config --global user.name dainikstories
+
+
+
+

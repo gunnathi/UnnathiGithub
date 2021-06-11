@@ -1,0 +1,93 @@
+
+Step 1: Create a new branch
+
+	git branch MyNewBranch
+	
+Step 2: Verify the branches:
+
+	git branch
+	
+Step 3: Checkout MyNewBranch and verify to make certain commits:
+
+	git checkout MyNewBranch
+	
+	git branch
+	
+Step 4: Make changes to your local repo and add it for staging:
+
+	a. Create to files:
+	
+		projectone.txt and projecttwo.txt
+	
+	b. check the status:
+	
+		git status
+		
+	c. Add untracked files for staging:
+	
+		git add .
+		
+	d. check the status again:
+	
+		git status
+		
+	e. Commit the changes:
+		
+		git commit -m "Adding files in MyNewBranch"
+		
+	f. Push commit to server repository:
+	
+		git remote add origin https://github.com/dainikstories/test-project.git
+	
+		git push -u origin MyNewBranch
+		
+Step 5: To merge the branch:
+
+	a. Checkout to the master branch:
+	
+		git checkout master
+		
+	b. Merge Master and MyNewBranch
+
+		git merge MyNewBranch
+		
+	c. Push the changes again:
+	
+		git add .
+		
+		git status
+		
+		git commit -m "Merged branches"
+		
+		git push -u origin master
+		
+	d. verify the message:
+	
+		This branch is even with master.
+		
+Step 5: To Delete the branch:
+
+	a. To delete the branch from local repository:
+	
+		git branch -d MyNewBranch
+		
+	b. To delete branch from Remote repository:
+	
+		git push origin --delete MyNewBranch
+		
+-----------------------------------------------------
+
+To pull project:
+
+1. Create directory:
+
+	F:\Sample_Projects\test-pull-project>
+	
+2. Initialize git:
+
+	git init
+	
+3. Pull project from remote directory:
+
+	git pull https://github.com/dainikstories/test-project.git
+	
